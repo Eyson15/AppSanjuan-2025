@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSanJuan_2025.NovenasPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <DatePicker ></DatePicker>
+            <!-- Lista de eventos agrupados -->
+            <CollectionView x:Name="collectionView"
+                        ItemsSource="{Binding EventosAgrupados}"
+                        IsGrouped="True"
+                        SelectionMode="None">
+
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Name}"
+                           FontSize="18"
+                           TextColor="#FFDE59"
+                           FontAttributes="Bold"
+                           BackgroundColor="#292A3F"
+                           Padding="10,5"/>
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="12"
+                          Margin="0,6"
+                          BackgroundColor="#2A2B3E"
+                          ColumnDefinitions="Auto,*,Auto"
+                          RowDefinitions="Auto,Auto,Auto">
+                            <Image Grid.RowSpan="3"
+                               Source="{Binding Imagen}"
+                               WidthRequest="150"
+                               HeightRequest="150"
+                               VerticalOptions="Center" 
+                               />
+
+                            <Label Grid.Column="1"
+                               Text="{Binding Titulo}"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="White" />
+
+                            <Label Grid.Column="1" Grid.Row="1"
+                               Text="{Binding Lugar}"
+                               FontSize="14"
+                               TextColor="LightGray"
+                                   />
+
+                            <Label Grid.Column="1" Grid.Row="2"
+                               Text="{Binding Hora}"
+                               FontSize="13"
+                               TextColor="#7B7C8E" />
+
+                            <Image Grid.Column="2" Grid.RowSpan="3"
+                               Source="whatsapp.png"
+                               WidthRequest="32"
+                               HeightRequest="32"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                                />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+        

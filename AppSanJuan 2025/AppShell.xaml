@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AppSanJuan_2025.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppSanJuan_2025"
+    Shell.FlyoutBehavior="Flyout"
+    Title="Actividades San Juan Bautista - 2025">
+
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout Padding="15" BackgroundColor="Orange">
+            <Label Text="San Juan Bautista" TextColor="Black" FontSize="35"
+                   FontAttributes="Bold"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Inicio" Icon="home.png" >
+        <Tab Title="Inicio">
+            <ShellContent
+            Title="Principal"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+        </Tab>
+        <Tab Title="Bienvenida">
+            <ShellContent
+            Title="Palabras de bienvenida del Dr.Anibal Gálvez Alcalde provincial"
+            ContentTemplate="{DataTemplate local:BienvenidaPage}"
+            Route="BienvenidaPage" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Auspiciadores" Icon="people.png">
+        <ShellContent
+            Title="Auspician"
+            ContentTemplate="{DataTemplate local:AuspiciadoresPage}"
+            Route="AuspiciadoresPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Novenas" Icon="party-people.png">
+        <ShellContent
+            Title="Novenario 2025"
+            ContentTemplate="{DataTemplate local:NovenasPage}"
+            Route="NovenasPage" />
+    </FlyoutItem>
+</Shell>
